@@ -1,0 +1,18 @@
+.wrapper {
+  margin-top: 10px;
+  .search-grid {
+    grid-column: 4/10;
+    grid-row: 1;
+    mat-card {
+      mat-card-content {
+        mat-form-field {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .list-grid {
+    grid-column: 4/10;
+    grid-row: 2;
+  }
+}

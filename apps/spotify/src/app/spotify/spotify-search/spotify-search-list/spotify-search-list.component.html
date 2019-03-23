@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-list>
+    <mat-list-item *ngFor="let artist of artists" class="mat-list-option" (click)="navigateToArtist(artist.id)">
+      <img mat-list-icon [src]="fallbackImage(artist.images[0]?.url)" />
+      <h3 mat-line>{{artist.name}}</h3>
+      <p mat-line class="followers">
+        {{artist.followers.total | number:'1.'}} total followers.
+      </p>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

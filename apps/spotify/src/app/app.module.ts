@@ -13,6 +13,8 @@ import { SpotifyComponent } from './spotify/spotify.component';
 import { SpotifySearchComponent } from './spotify/spotify-search/spotify-search.component';
 import { SpotifyArtistComponent } from './spotify/spotify-artist/spotify-artist.component';
 import { SpotifyAlbumComponent } from './spotify/spotify-album/spotify-album.component';
+import { SpotifySearchListComponent } from './spotify/spotify-search/spotify-search-list/spotify-search-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,13 @@ import { SpotifyAlbumComponent } from './spotify/spotify-album/spotify-album.com
     SpotifyComponent,
     SpotifySearchComponent,
     SpotifyArtistComponent,
-    SpotifyAlbumComponent
+    SpotifyAlbumComponent,
+    SpotifySearchListComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     CoreDataModule,
     UiToolbarModule,
