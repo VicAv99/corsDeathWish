@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import * as decode from 'jwt-decode';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 export const TOKEN_NAME = 'token';
 
@@ -42,8 +42,8 @@ export class AuthService {
     return !(date.valueOf() > new Date().valueOf());
   }
 
-  login() {
-    return this.http.post(``, {});
+  login(url: string, data?: any, headers?: HttpHeaders, params?: HttpParams) {
+    return this.http.post(url, data, { headers, params });
   }
 
   logout() {
