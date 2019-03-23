@@ -10,12 +10,18 @@ import { RoutingModule } from './routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SpotifyComponent } from './spotify/spotify.component';
+import { SpotifySearchComponent } from './spotify/spotify-search/spotify-search.component';
+import { SpotifyArtistComponent } from './spotify/spotify-artist/spotify-artist.component';
+import { SpotifyAlbumComponent } from './spotify/spotify-album/spotify-album.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SpotifyComponent
+    SpotifyComponent,
+    SpotifySearchComponent,
+    SpotifyArtistComponent,
+    SpotifyAlbumComponent
   ],
   imports: [
     BrowserModule,
