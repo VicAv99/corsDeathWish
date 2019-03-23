@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'spotify';
+  title = 'Spotify Example App';
+  links = [
+    { path: '/login', icon: 'person', title: 'Login' }
+  ];
 }

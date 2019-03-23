@@ -1,1 +1,16 @@
-<cors-login></cors-login>
+<cors-toolbar [title]="title" [sidenav]="sidenav" [isAuthenticated]="true"></cors-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" class="app-sidenav">
+    <nav>
+      <a mat-button class="nav-link" *ngFor="let link of links" [routerLink]="link.path" routerLinkActive="active">
+        <mat-icon>
+          {{link.icon}}
+        </mat-icon>
+        {{link.title}}
+      </a>
+    </nav>
+  </mat-sidenav>
+
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { MaterialModule } from '@cors/material';
 import { CoreDataModule } from '@cors/core-data';
+import { UiToolbarModule } from '@cors/ui-toolbar';
 import { UiLoginModule } from '@cors/ui-login';
 import { RoutingModule } from './routing.module';
 
@@ -18,6 +19,7 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     MaterialModule,
     CoreDataModule,
+    UiToolbarModule,
     UiLoginModule,
     RoutingModule
   ],
