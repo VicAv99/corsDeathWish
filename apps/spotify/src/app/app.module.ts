@@ -9,11 +9,13 @@ import { RoutingModule } from './routing.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { SpotifyComponent } from './spotify/spotify.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    SpotifyComponent
   ],
   imports: [
     BrowserModule,

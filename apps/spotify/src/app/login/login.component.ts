@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       .split('&token')[0];
 
     this.authService.setToken(accessToken);
-    this.router.navigate(['/'], { queryParams: {} });
+    this.router.navigate(['/spotify'], { queryParams: {} });
   }
 
 }

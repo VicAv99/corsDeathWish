@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-
-import * as decode from 'jwt-decode';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+
+import * as decode from 'jwt-decode';
+import { BehaviorSubject } from 'rxjs';
 
 export const TOKEN_NAME = 'token';
 
@@ -10,10 +11,14 @@ export const TOKEN_NAME = 'token';
   providedIn: 'root'
 })
 export class AuthService {
+  isAuthenticated$ = new BehaviorSubject(false);
+
   constructor(
     private router: Router,
     private http: HttpClient
-  ) {}
+  ) {
+    this.setToken(this.getToken());
+  }
 
   getToken() {
     return localStorage.getItem(TOKEN_NAME);
@@ -21,6 +26,7 @@ export class AuthService {
 
   setToken(token: string) {
     localStorage.setItem(TOKEN_NAME, token);
+    this.isAuthenticated$.next(token !== '');
   }
 
   getTokenExpirationDate(token: string): Date {
@@ -33,7 +39,7 @@ export class AuthService {
     return date;
   }
 
-  isAuthenticated(token?: string): boolean {
+  isTokenExpired(token?: string): boolean {
     if (token) token = this.getToken();
     if (!token) return true;
 
