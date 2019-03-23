@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from '@cors/material';
 import { CoreDataModule } from '@cors/core-data';
 import { UiLoginModule } from '@cors/ui-login';
+import { RoutingModule } from './routing.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -17,7 +18,8 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     MaterialModule,
     CoreDataModule,
-    UiLoginModule
+    UiLoginModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
