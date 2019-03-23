@@ -26,6 +26,12 @@
         "tool",
         "bar"
       ]
+    },
+    "spotify": {
+      "tags": ["spotify", "ng-spot", "spot"]
+    },
+    "spotify-e2e": {
+      "tags": []
     }
   }
 }
