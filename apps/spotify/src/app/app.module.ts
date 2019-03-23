@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { MaterialModule } from '@cors/material';
+import { CoreDataModule } from '@cors/core-data';
+import { UiLoginModule } from '@cors/ui-login';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -13,7 +15,9 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    MaterialModule
+    MaterialModule,
+    CoreDataModule,
+    UiLoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
