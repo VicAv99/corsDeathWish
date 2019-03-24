@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import {
   debounceTime,
@@ -19,7 +20,10 @@ export class SpotifySearchComponent implements OnInit {
   searchResults: Artist[];
   searchControl = new FormControl();
 
-  constructor(private spotifyService: SpotifyService) {}
+  constructor(
+    private router: Router,
+    private spotifyService: SpotifyService
+  ) {}
 
   ngOnInit() {
     this.searchMusic();
@@ -34,5 +38,9 @@ export class SpotifySearchComponent implements OnInit {
         switchMap(qq => this.spotifyService.searchMusic(qq))
       )
       .subscribe(res => (this.searchResults = (<Artist>res).artists.items));
+  }
+
+  navigateToArtist(artistId: string) {
+    this.router.navigateByUrl(`/spotify/artist/${artistId}`);
   }
 }

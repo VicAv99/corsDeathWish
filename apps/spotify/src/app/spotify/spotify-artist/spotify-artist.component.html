@@ -1,3 +1,27 @@
-<p>
-  spotify-artist works!
-</p>
+<div class="wrapper">
+  <div class="artist-grid">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h1>{{artist.name}}</h1>
+        </mat-card-title>
+      </mat-card-header>
+      <div class="center-img" *ngIf="hasMultipleImages(artist.images.length)">
+        <img class="main-img" [src]="displayImage(artist.images[0])" />
+      </div>
+    </mat-card>
+  </div>
+</div>
+<div class="album-grid">
+  <mat-card *ngFor="let album of albums" [routerLink]="'/spotify/album/' + album.id" class="mat-list-option">
+    <mat-card-header>
+      <mat-card-title>
+        <h1 class="album-names">{{album.name}}</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <hr>
+    <div class="center-img" *ngIf="hasMultipleImages(album.images.length)">
+      <img class="albums-img" [src]="displayImage(album.images[0])">
+    </div>
+  </mat-card>
+</div>

@@ -16,6 +16,8 @@
   </div>
 
   <div class="list-grid" *ngIf="searchResults">
-    <cors-spotify-search-list [artists]="searchResults"></cors-spotify-search-list>
+    <cors-spotify-search-list [artists]="searchResults"
+                              (navigated)="navigateToArtist($event)">
+    </cors-spotify-search-list>
   </div>
 </div>

@@ -12,9 +12,9 @@ const routes: Route[] = [
   { path: 'login', component: LoginComponent },
   {
     path: 'spotify',
-    component: SpotifySearchComponent,
     canActivate: [ AuthGuard ],
     children: [
+      { path: '', component: SpotifySearchComponent },
       { path: 'artist/:id', component: SpotifyArtistComponent },
       { path: 'album/:id', component: SpotifyAlbumComponent }
     ]

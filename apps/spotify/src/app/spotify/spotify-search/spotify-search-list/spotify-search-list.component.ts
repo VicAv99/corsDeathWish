@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Artist } from '@cors/core-data';
 import { Router } from '@angular/router';
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SpotifySearchListComponent {
   @Input() artists: Artist[];
+  @Output() navigated = new EventEmitter();
 
   constructor(private router: Router) { }
 
@@ -18,6 +19,6 @@ export class SpotifySearchListComponent {
   }
 
   navigateToArtist(artistId: string) {
-    this.router.navigateByUrl(`/spotify/artist/${artistId}`);
+    this.navigated.emit(artistId);
   }
 }
